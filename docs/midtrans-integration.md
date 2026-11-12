@@ -279,7 +279,7 @@ A box paired with `"qr_mode": "dynamic"` holds no static QRIS:
 | Idle | Outlet name and a "Kami menerima" QRIS / GPN badge (no QR) |
 | Bill printed, `qr.created` in time | The amount and your Midtrans QR, until `expires_at` |
 | Paid | Back to idle (the 3.97" box shows "Pembayaran diterima" and the amount first) and the voice announcement |
-| `qr.failed`, no answer in 8 s, amount mismatch, phone not connected | "QR gagal / Cetak ulang tagihan" (QR failed, print the bill again) for 10 s |
+| `qr.failed`, no answer in 8 s, amount out of tolerance (±), phone not connected | "QR gagal / Cetak ulang tagihan" (QR failed, print the bill again) for 10 s |
 
 The cashier reprints the bill to try again; each reprint is a new `qr.request`.
 
@@ -354,7 +354,7 @@ Before going live:
 |---|---|
 | App says the pairing code isn't valid | App version without dynamic-only support; expired link; bot username or token malformed |
 | App asks to update the box firmware | Box firmware older than 1.3.0 (no "D" in its status): it refuses a dynamic-only identity |
-| Box shows "QR gagal" for every bill | Answer later than 8 s (see the simulator's "answered in" line); charge error; `qr_string` missing; amount mismatch; box's gateway mode off |
+| Box shows "QR gagal" for every bill | Answer later than 8 s (see the simulator's "answered in" line); charge error; `qr_string` missing; amount out of tolerance (±99); box's gateway mode off |
 | QR shows, payment never announced | Notification URL unreachable (tunnel changed), signature mismatch (wrong Server Key), payment sent to another chat, or the message reached the phone more than 120 s later |
 | `charge: 406` | Repeated `order_id`: retry with the bill's code appended (see [order_id](#the-charge-request)) |
 | `charge: 401` | Wrong Server Key, or a production key against the sandbox |
