@@ -286,6 +286,6 @@ QRIS, such as Midtrans.
 - The app gives the box an identity instead of a QRIS, built from `outlet_name`.
 - While idle, the box shows a "Kami menerima" (we accept) QRIS / GPN badge and the outlet name.
 - Every QR comes from you. Where a static box would make its own QR (late answer, `qr.failed`, a
-  QR that doesn't match the bill, phone not connected), the box shows **"QR gagal / Cetak ulang
+  QR that's not within tolerance of the bill, phone not connected), the box shows **"QR gagal / Cetak ulang
   tagihan"** (QR failed, print the bill again) instead.
 - Older firmware refuses the identity, and the app asks the merchant to update the box.
