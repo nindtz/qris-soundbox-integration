@@ -1,0 +1,22 @@
+{
+  "_comment": "Shared test vectors for every snippet. Keys are test values only.",
+  "qrissb": {
+    "hmac_key": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=",
+    "json": "{\"v\":1,\"type\":\"qr.created\",\"device_id\":\"dev_9a1b2c3d\",\"outlet_id\":\"OUT-0012\",\"ts\":1794467501,\"request_id\":\"sb_0a1b2c3d\",\"amount\":95000,\"qris\":\"00020101021226...6304ABCD\",\"expires_at\":\"2026-11-12T14:26:41+07:00\",\"note\":\"Kopi Señja\"}",
+    "sig": "9210c1a4d53968c6a1ed83b30aee266fd362f42a93b783852c4a6de9b0f5a21b",
+    "message": "#QRISSB {\"v\":1,\"type\":\"qr.created\",\"device_id\":\"dev_9a1b2c3d\",\"outlet_id\":\"OUT-0012\",\"ts\":1794467501,\"request_id\":\"sb_0a1b2c3d\",\"amount\":95000,\"qris\":\"00020101021226...6304ABCD\",\"expires_at\":\"2026-11-12T14:26:41+07:00\",\"note\":\"Kopi Señja\"}|9210c1a4d53968c6a1ed83b30aee266fd362f42a93b783852c4a6de9b0f5a21b",
+    "tampered_message": "#QRISSB {\"v\":1,\"type\":\"qr.created\",\"device_id\":\"dev_9a1b2c3d\",\"outlet_id\":\"OUT-0012\",\"ts\":1794467501,\"request_id\":\"sb_0a1b2c3d\",\"amount\":9500,\"qris\":\"00020101021226...6304ABCD\",\"expires_at\":\"2026-11-12T14:26:41+07:00\",\"note\":\"Kopi Señja\"}|9210c1a4d53968c6a1ed83b30aee266fd362f42a93b783852c4a6de9b0f5a21b",
+    "unsigned_message": "#QRISSB {\"v\":1,\"type\":\"pairing.ok\",\"pairing_token\":\"pt_8f3c\",\"device_id\":\"dev_9a1b2c3d\",\"outlet_id\":\"OUT-0012\",\"hmac_key\":\"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=\",\"ts\":1794467400}"
+  },
+  "midtrans": {
+    "server_key": "SB-Mid-server-TEST_KEY_ONLY",
+    "notification": {
+      "order_id": "OUT-0012-sb_0a1b2c3d-1794467500",
+      "status_code": "200",
+      "gross_amount": "95000.00",
+      "transaction_status": "settlement",
+      "transaction_id": "c8c98727-2880-4c4a-8cfa-a31a459d8cef",
+      "signature_key": "e0966f9820c6d955b349b23133cf5fe660b0b024da7aaaf13ccfa37c0598771af11b6d7b0cfd3c5f33006f06615786005cac973c57760f201d6008c35fbd5649"
+    }
+  }
+}

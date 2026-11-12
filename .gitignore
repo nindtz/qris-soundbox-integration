@@ -1,0 +1,13 @@
+# simulator state (paired phones and their keys)
+pg_sim_state.json
+
+# Kotlin self-check
+*.jar
+args.txt
+
+# Python / editors
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
