@@ -191,7 +191,7 @@ A new bill replaces the previous one: the app sends `qr.cancel` for the old `req
 | Field | Rules |
 |---|---|
 | `request_id` | From the request |
-| `amount` | Must equal the request's amount |
+| `amount` | Must be within the request's amount (±99) |
 | `qris` | A dynamic QRIS with a valid CRC whose amount (tag 54) equals `amount` |
 | `expires_at` | ISO 8601 or Unix seconds. The box shows the QR until then, clamped to 10 to 900 seconds; without it, 60 seconds |
 
