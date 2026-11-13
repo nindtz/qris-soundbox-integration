@@ -44,25 +44,25 @@ Only two Midtrans calls are involved:
 sequenceDiagram
     autonumber
     participant POS
-    participant Box
+    participant SB as Box
     participant App as SoundboxBridge
     participant Bot as Merchant's bot
     participant GW as Your gateway
     participant MT as Midtrans
-    POS->>Box: print bill (Rp 95.000, order SO1)
-    Box->>App: BILL (Bluetooth)
+    POS->>SB: print bill (Rp 95.000, order SO1)
+    SB->>App: BILL (Bluetooth)
     App->>Bot: qr.request
     Bot->>GW: webhook POST
     GW->>MT: POST /v2/charge (qris)
     MT-->>GW: status_code "201" + qr_string
     GW->>Bot: sendMessage: qr.created
     Bot->>App: qr.created
-    App->>Box: dynamic QR, shown with the amount
-    Note over Box: customer scans and pays
+    App->>SB: dynamic QR, shown with the amount
+    Note over SB: customer scans and pays
     MT->>GW: notification: settlement
     GW->>Bot: sendMessage: payment.succeeded
     Bot->>App: payment.succeeded
-    App->>Box: "Pembayaran diterima, sembilan puluh lima ribu rupiah"
+    App->>SB: "Pembayaran diterima, sembilan puluh lima ribu rupiah"
 ```
 
 Steps 2 to 9 must finish within **8 seconds** of the bill being printed (see [Timing](#timing)).
