@@ -54,7 +54,7 @@ sequenceDiagram
     App->>Bot: qr.request
     Bot->>GW: webhook POST
     GW->>MT: POST /v2/charge (qris)
-    MT-->>GW: 201 + qr_string
+    MT-->>GW: status_code "201" + qr_string
     GW->>Bot: sendMessage: qr.created
     Bot->>App: qr.created
     App->>Box: dynamic QR, shown with the amount
@@ -65,7 +65,7 @@ sequenceDiagram
     App->>Box: "Pembayaran diterima, sembilan puluh lima ribu rupiah"
 ```
 
-Steps 3 to 9 must finish within **8 seconds** of the bill being printed (see [Timing](#timing)).
+Steps 2 to 9 must finish within **8 seconds** of the bill being printed (see [Timing](#timing)).
 
 ## 1. Connect the merchant's bot
 
